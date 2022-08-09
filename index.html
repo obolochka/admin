@@ -755,12 +755,12 @@ document.getElementById('my-player_html5_api').firstElementChild.src = p9_new;
 document.getElementById("my-player_html5_api").style.display = 'block';
 document.getElementById("my-player").style.display = 'block';
 document.getElementById("my-player2_html5_api").style.display = 'none';
-document.getElementById("my-player2_html5_api").src = 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4';
+document.getElementById("my-player2_html5_api").firstElementChild.src = 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4';
 player2.src('https://samplelib.com/lib/preview/mp4/sample-5s.mp4');
 } else {
 document.getElementById('iden').value = '4';
-if (document.getElementById("my-player2_html5_api").src != p9_new) {
-document.getElementById("my-player2_html5_api").src = p9_new;
+if (document.getElementById("my-player2_html5_api").firstElementChild.src != p9_new) {
+document.getElementById("my-player2_html5_api").firstElementChild.src = p9_new;
 player2.src(p9_new);
 }
 document.getElementById("my-player2_html5_api").style.display = 'block';
