@@ -25,7 +25,15 @@ html {
 -ms-overflow-style: none;
 scrollbar-width: none;
 }
-.vid {
+.video-js2 {
+z-index: 0;
+position: absolute;
+width: 1366px;
+height: 768px;
+left: 0px;
+top: 0px;
+}
+#my-player2_html5_api {
 z-index: 0;
 position: absolute;
 width: 1366px;
@@ -287,7 +295,7 @@ height: 768px;
 left: 0px;
 top: 0px;
 }
-.vjs-tech {
+#my-player_html5_api {
 z-index: 1;
 position: absolute;
 width: 1366px;
@@ -452,13 +460,13 @@ document.getElementById("notsinx").style.display = '';
 
 <iframe class="youtube" id="youtube" src="" title="YouTube video player" frameborder="0" allowfullscreen="true" srolling="no" controls="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe class="chat" id="chat" style="border:0" src=""></iframe> 
-
-<video class="vid" id="vid">
-  <source src="" />
-</video>   
+<iframe class="chat" id="chat" style="border:0" src=""></iframe>  
 	
 <video id="my-player" class="video-js" preload="auto" controls>
+  <source src=""></source>
+</video>
+	
+<video id="my-player2" class="video-js2" preload="auto" controls>
   <source src=""></source>
 </video>
 
@@ -469,7 +477,17 @@ var player = videojs('my-player', {
 </script>
 
 <script>
+var player2 = videojs('my-player2', {
+  controlBar: false
+});
+</script>
+
+<script>
 myplayer = document.getElementById('my-player_html5_api');
+</script>
+
+<script>
+myplayer2 = document.getElementById('my-player2_html5_api');
 </script>
 
 <script>
@@ -492,7 +510,7 @@ document.mozCancelFullScreen();
 <script type="text/javascript">
 setInterval(function() {
 if (document.getElementById("myButton2")) {
-if (!vid.paused || !myplayer.paused) {
+if (!my-player2_html5_api.paused || !myplayer.paused) {
 if (document.getElementById('tablsost').value != 1) {
 document.getElementById("myButton2").style.display = 'none'; 
 document.getElementById("sinhron").style.display = 'none'; 
@@ -503,7 +521,7 @@ document.getElementById("notsinhron").style.display = 'none';
 document.getElementById("notsinx").style.display = 'none';
 }
 } 
-if (vid.paused & myplayer.paused) {
+if (my-player2_html5_api.paused & myplayer.paused) {
 document.getElementById("myButton2").style.display = '';
 document.getElementById("sinhron").style.display = '';
 document.getElementById("sum").style.display = '';
@@ -620,11 +638,11 @@ output.innerHTML = this.value;
 <script type="text/javascript">
 setInterval(function() {
 if (document.getElementById("demo")) {
-if (document.getElementById('vid').controls == false) {
+if (document.getElementById('my-player2_html5_api').controls == false) {
 var input = document.getElementById("demo");
 var text = input.innerHTML;
 var v1 = text / 100;
-vid.volume = v1; 
+my-player2_html5_api.volume = v1; 
 myplayer.volume = v1;
 } 
 }
@@ -736,14 +754,15 @@ document.getElementById('my-player_html5_api').firstElementChild.src = p9_new;
 }
 document.getElementById("my-player_html5_api").style.display = 'block';
 document.getElementById("my-player").style.display = 'block';
-document.getElementById("vid").style.display = 'none';
-document.getElementById("vid").src = '';
+document.getElementById("my-player2_html5_api").style.display = 'none';
+document.getElementById("my-player2_html5_api").src = 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4';
+player2.src('https://samplelib.com/lib/preview/mp4/sample-5s.mp4');
 } else {
 document.getElementById('iden').value = '4';
-if (document.getElementById("vid").src != p9_new) {
-document.getElementById("vid").src = p9_new;
+if (document.getElementById("my-player2_html5_api").src != p9_new) {
+document.getElementById("my-player2_html5_api").src = p9_new;
 }
-document.getElementById("vid").style.display = 'block';
+document.getElementById("my-player2_html5_api").style.display = 'block';
 document.getElementById("my-player_html5_api").style.display = 'none';
 document.getElementById("my-player").style.display = 'none';
 myplayer.pause();
@@ -876,7 +895,7 @@ massp9.push(p9);
 massotmot.push(otmot);
 m2.push(vremya);
 document.getElementById('vide1').value = '0';
-setTimeout(() => {var data = new Date(); var chasi = data.getHours() * 60 * 60; var minyti = data.getMinutes() * 60; var secundi = data.getSeconds(); var vremya = chasi + minyti + secundi; var vvv = vremya - zader; var nomm = m2.indexOf(vvv); if (nomm != -1) {vid.pause(); vid.currentTime = massp9[nomm];}}, zader2);
+setTimeout(() => {var data = new Date(); var chasi = data.getHours() * 60 * 60; var minyti = data.getMinutes() * 60; var secundi = data.getSeconds(); var vremya = chasi + minyti + secundi; var vvv = vremya - zader; var nomm = m2.indexOf(vvv); if (nomm != -1) {my-player2_html5_api.pause(); my-player2_html5_api.currentTime = massp9[nomm];}}, zader2);
   document.getElementById('ypr').value = p9;
   } 
   if (p5 == 1) {
@@ -889,7 +908,7 @@ massp9.push(p9);
 massotmot.push(otmot);
 m2.push(vremya);
 document.getElementById('vide1').value = '1';
-setTimeout(() => {var data = new Date(); var chasi = data.getHours() * 60 * 60; var minyti = data.getMinutes() * 60; var secundi = data.getSeconds(); var vremya = chasi + minyti + secundi; var vvv = vremya - zader; var nomm = m2.indexOf(vvv); if (nomm != -1) {vid.play(); vid.currentTime = massp9[nomm];}}, zader2);
+setTimeout(() => {var data = new Date(); var chasi = data.getHours() * 60 * 60; var minyti = data.getMinutes() * 60; var secundi = data.getSeconds(); var vremya = chasi + minyti + secundi; var vvv = vremya - zader; var nomm = m2.indexOf(vvv); if (nomm != -1) {my-player2_html5_api.play(); my-player2_html5_api.currentTime = massp9[nomm];}}, zader2);
   document.getElementById('ypr').value = p9;
   }
   }
@@ -955,7 +974,7 @@ you.style.width = shir_you + "px";
 you.style.height = vis_you + "px";
 }
 	
-var vid = document.getElementById("vid");
+var vid = document.getElementById("my-player2_html5_api");
 var vis_vid = shir_ok / 1.77777777;
 vid.style.width = shir_ok + "px";
 vid.style.height = vis_vid + "px";
@@ -964,6 +983,11 @@ var my_player = document.getElementById("my-player");
 var vis_my_player = shir_ok / 1.77777777;
 my_player.style.width = shir_ok + "px";
 my_player.style.height = vis_my_player + "px";
+	
+var my_player2 = document.getElementById("my-player2");
+var vis_my_player2 = shir_ok / 1.77777777;
+my_player2.style.width = shir_ok + "px";
+my_player2.style.height = vis_my_player2 + "px";
 
 var my_player_html5_api = document.getElementById("my-player_html5_api");
 var vis_my_player_html5_api = shir_ok / 1.77777777;
