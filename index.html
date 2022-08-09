@@ -761,6 +761,7 @@ player2.src('https://samplelib.com/lib/preview/mp4/sample-5s.mp4');
 document.getElementById('iden').value = '4';
 if (document.getElementById("my-player2_html5_api").src != p9_new) {
 document.getElementById("my-player2_html5_api").src = p9_new;
+player2.src(p9_new);
 }
 document.getElementById("my-player2_html5_api").style.display = 'block';
 document.getElementById("my-player_html5_api").style.display = 'none';
