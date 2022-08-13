@@ -908,7 +908,7 @@ massp9.push(p9);
 massotmot.push(otmot);
 m2.push(vremya);
 document.getElementById('vide2').value = '0';
-setTimeout(() => {var data = new Date(); var chasi = data.getHours() * 60 * 60; var minyti = data.getMinutes() * 60; var secundi = data.getSeconds(); var vremya = chasi + minyti + secundi; var vvv = vremya - zader; var nomm = m2.indexOf(vvv); var nomdlin = masstime.indexOf(vvv); var razndlin = '0'; if (nomdlin != -1) {var dlinplaystar = masspl[nomdlin]; var dlinplay = myplayer.duration; var razndlin = dlinplay - dlinplaystar;} if (nomm != -1) {myplayer.pause(); myplayer.currentTime += 100000; var okotmot = razndlin - massotmot[nomm]; myplayer.currentTime -= okotmot; console.log(razndlin; massotmot[nomm]; okotmot);}}, zader2);
+setTimeout(() => {var data = new Date(); var chasi = data.getHours() * 60 * 60; var minyti = data.getMinutes() * 60; var secundi = data.getSeconds(); var vremya = chasi + minyti + secundi; var vvv = vremya - zader; var nomm = m2.indexOf(vvv); var nomdlin = masstime.indexOf(vvv); if (nomdlin != -1) {var dlinplaystar = masspl[nomdlin]; var dlinplay = myplayer.duration; var razndlin = dlinplay - dlinplaystar;} if (nomm != -1) {myplayer.pause(); myplayer.currentTime += 100000; var okotmot = razndlin - massotmot[nomm]; myplayer.currentTime -= okotmot; console.log(okotmot);}}, zader2);
   document.getElementById('ypr2').value = p14;
   } 
   if (p5 == 1) {
@@ -921,7 +921,7 @@ massp9.push(p9);
 massotmot.push(otmot);
 m2.push(vremya);
 document.getElementById('vide2').value = '1';
-setTimeout(() => {var data = new Date(); var chasi = data.getHours() * 60 * 60; var minyti = data.getMinutes() * 60; var secundi = data.getSeconds(); var vremya = chasi + minyti + secundi; var vvv = vremya - zader; var nomm = m2.indexOf(vvv); var nomdlin = masstime.indexOf(vvv); var razndlin = '0'; if (nomdlin != -1) {var dlinplaystar = masspl[nomdlin]; var dlinplay = myplayer.duration; var razndlin = dlinplay - dlinplaystar;} if (nomm != -1) {myplayer.play(); myplayer.currentTime += 100000; var okotmot = razndlin - massotmot[nomm]; myplayer.currentTime -= okotmot; console.log(razndlin; massotmot[nomm]; okotmot);}}, zader2);
+setTimeout(() => {var data = new Date(); var chasi = data.getHours() * 60 * 60; var minyti = data.getMinutes() * 60; var secundi = data.getSeconds(); var vremya = chasi + minyti + secundi; var vvv = vremya - zader; var nomm = m2.indexOf(vvv); var nomdlin = masstime.indexOf(vvv); if (nomdlin != -1) {var dlinplaystar = masspl[nomdlin]; var dlinplay = myplayer.duration; var razndlin = dlinplay - dlinplaystar;} if (nomm != -1) {myplayer.play(); myplayer.currentTime += 100000; var okotmot = razndlin - massotmot[nomm]; myplayer.currentTime -= okotmot; console.log(okotmot);}}, zader2);
   document.getElementById('ypr2').value = p14;
   }
   }
